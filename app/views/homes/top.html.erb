@@ -1,20 +1,35 @@
-<h1>welcome to Bookers !!</h1>
-
-<p>
-  In Bookers,<br />
-  you can share and exchange your options, inpressions, and emotions<br />
-  about various books!
-</p>
-
-<% if user_signed_in? %>
-  <%= link_to "Log in", user_path(@user) %>
-  <% else %>
-  <%= link_to "Log in", new_user_session_path %>
-<% end %>
-
-<% if user_signed_in? %>
-  <%= link_to "Sign Up", user_path(@user) %>
-  <% else %>
-  <%= link_to "Sign Up", new_user_registration_path %>
-<% end %>
-
+<p id="notice"></p>
+<div class="container">
+  <div class="row d-flex mr-15 ml-15">
+    <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
+      <h1>welcome to <i class="fas fa-book"></i><strong>Bookers</strong>!!</h1>
+      <p>In <i class="fas fa-book"></i>Bookers,</p>
+      <p>you can share and exchange your options, inpressions, and emotions</p>
+      <p>about various books!</p>
+        <div class="btn-wrapper col-10 mx-auto">
+          <div class="row-lg-10">
+            <% if user_signed_in? %>
+              <%= link_to user_path(@user) do %>
+              <button class="btn btn-info btn-sm btn-block mb-3">Log in</button>
+              <% end %>
+            <% else %>
+              <%= link_to new_user_session_path do %>
+              <button class="btn btn-info btn-sm btn-block mb-3">Log in</button>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="row-lg-10">
+            <% if user_signed_in? %>
+              <%= link_to user_path(@user) do %>
+              <button class="btn btn-success btn-sm btn-block">Sign up</button>
+              <% end %>
+            <% else %>
+              <%= link_to new_user_registration_path do %>
+              <button class="btn btn-success btn-sm btn-block">Sign Up</button>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
