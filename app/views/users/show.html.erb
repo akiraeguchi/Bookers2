@@ -1,2 +1,30 @@
-<h1>マイページ</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>User info</h1>
+
+<p>name <%= @user.name %></p>
+
+<p>introduction <%= @user.introduction %></p>
+
+<% if @user.id == current_user.id %>
+<P><%= link_to "プロフィール編集", edit_user_path(@user) %></P>
+<% end %>
+
+<h1>New book</h1>
+
+<%= form_with model: @book, url: '/books', local:true do |f| %>
+  <p>Title</p>
+  <%= f.text_field :title %>
+  <P>Opinion</P>
+  <%= f.text_area :body %>
+  <%= f.submit "Create Book" %>
+<% end %>
+
+<h1>Books</h1>
+<P>Title</P>
+<p>Opinion</p>
+<% @books.each do |book| %>
+
+  <%= book.title %>
+
+  <%= book.body %>
+
+<% end %>
