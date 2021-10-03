@@ -14,7 +14,7 @@
   <body class="d-flex flex-column vh-100">
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <div class="container-fluid">
+          <div class="container">
             <a class="navbar-brand" href="/">Bookers</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -25,25 +25,25 @@
              <li class="nav-item">
                <%= link_to user_path(current_user.id), class: 'navbar-brand nav-link text-white' do %>
                  <i class="fas fa-home" width="30" heigght="30" class="d-inline-block align-text-top"></i>
-                 <span>Home</span>
+                 <span><strong>Home</strong></span>
                <% end %>
              </li>
              <li class="nav-item">
                <%= link_to users_path, class: 'navbar-brand nav-link text-white' do %>
                  <i class="fas fa-users" width="30" heigght="30" class="d-inline-block align-text-top"></i>
-                 <span>Users</span>
+                 <span><strong>Users</strong></span>
                <% end %>
              </li>
              <li class="nav-item">
                <%= link_to books_path, class: 'navbar-brand nav-link text-white' do %>
                  <i class="fas fa-book-open" width="30" heigght="30" class="d-inline-block align-text-top"></i>
-                 <span>Books</span>
+                 <span><strong>Books</strong></span>
                <% end %>
              </li>
              <li class="nav-item">
                <%= link_to destroy_user_session_path, method: :delete, class: 'navbar-brand nav-link text-white' do %>
                  <i class="fas fa-sign-out-alt" width="30" heigght="30" class="d-inline-block align-text-top"></i>
-                 <span>logout</span>
+                 <span><strong>Log out</strong></span>
                <% end %>
              </li>
              <% else %>
@@ -51,25 +51,25 @@
              <li class="nav-item">
                <%= link_to root_path, class: 'navbar-brand nav-link text-white' do %>
                  <i class="fas fa-home" width="30" heigght="30" class="d-inline-block align-text-top"></i>
-                 <span>Home</span>
+                 <span><strong>Home</strong></span>
                <% end %>
              </li>
              <li class="nav-item">
                <%= link_to about_path, class: 'navbar-brand nav-link text-white' do %>
                  <i class="fas fa-link" width="30" heigght="30" class="d-inline-block align-text-top"></i>
-                 <span>About</span>
+                 <span><strong>About</strong></span>
                <% end %>
              </li>
              <li class="nav-item">
                <%= link_to new_user_registration_path, class: 'navbar-brand nav-link text-white' do %>
                  <i class="fas fa-user-plus" width="30" heigght="30" class="d-inline-block align-text-top"></i>
-                 <span>sign up</span>
+                 <span><strong>Sign up</strong></span>
                <% end %>
              </li>
              <li class="nav-item">
                <%= link_to new_user_session_path, class: 'navbar-brand nav-link text-white' do %>
                  <i class="fas fa-sign-in-alt" width="30" heigght="30" class="d-inline-block align-text-top"></i>
-                 <span>login</span>
+                 <span><strong>Log in</strong></span>
                <% end %>
              </li>
              <% end %>

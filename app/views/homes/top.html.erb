@@ -2,11 +2,11 @@
 <div class="container">
   <div class="row d-flex mr-15 ml-15">
     <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
-      <h1>welcome to <i class="fas fa-book"></i><strong>Bookers</strong>!!</h1>
-      <p>In <i class="fas fa-book"></i>Bookers,</p>
-      <p>you can share and exchange your options, inpressions, and emotions</p>
+      <h1>welcome to <i class="fas fa-book"></i><strong>Bookers</strong> !!</h1>
+      <p>In <i class="fas fa-book"></i><strong>Bookers</strong>,</p>
+      <p>you can share and exchange your opinions, inpressions, and emotions</p>
       <p>about various books!</p>
-        <div class="btn-wrapper col-10 mx-auto">
+        <div class="btn-wrapper col-11 mx-auto">
           <div class="row-lg-10">
             <% if user_signed_in? %>
               <%= link_to user_path(@user) do %>
@@ -25,7 +25,7 @@
               <% end %>
             <% else %>
               <%= link_to new_user_registration_path do %>
-              <button class="btn btn-success btn-sm btn-block">Sign Up</button>
+              <button class="btn btn-success btn-sm btn-block">Sign up</button>
               <% end %>
             <% end %>
           </div>
