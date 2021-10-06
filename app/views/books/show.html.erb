@@ -2,15 +2,18 @@
 
 <div class="container px-5 px-sm-0">
   <div class="row">
-    <%= render 'users/showuserinfo', user: @user, book: @book_new %>
+    <%= render 'layouts/userinfo', user: @user, book: @book_new %>
 
     <div class="col-md-8 offset-md-1">
       <h2>Book detail</h2>
       <table class="table">
         <tbody>
           <tr>
-            <td><%= attachment_image_tag @book.user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "40x40" %><br>
-                <%= link_to @book.user.name, user_path(@user) %>
+            <td>
+              <%= link_to user_path(@user) do %>
+              <%= attachment_image_tag @book.user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "40x40" %>
+              <% end %><br>
+              <%= link_to @book.user.name, user_path(@user) %>
             </td>
             <td><%= link_to @book.title, book_path(@book) %></td>
             <td><%= @book.body %></td>

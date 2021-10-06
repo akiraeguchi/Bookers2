@@ -1,4 +1,5 @@
-<p id="notice"></p>
+<%= render 'layouts/notification', text_color: "text-success" %>
+
 <div class="container">
   <div class="row d-flex mr-15 ml-15">
     <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
@@ -9,24 +10,16 @@
         <div class="btn-wrapper col-11 mx-auto">
           <div class="row-lg-10">
             <% if user_signed_in? %>
-              <%= link_to user_path(@user) do %>
-              <button class="btn btn-info btn-sm btn-block mb-3">Log in</button>
-              <% end %>
+              <%= link_to "Log in", user_path(@user), class: "btn btn-info btn-sm btn-block mb-3" %>
             <% else %>
-              <%= link_to new_user_session_path do %>
-              <button class="btn btn-info btn-sm btn-block mb-3">Log in</button>
-              <% end %>
+            <%= link_to "Log in", new_user_session_path, class: "btn btn-info btn-sm btn-block mb-3" %>
             <% end %>
           </div>
           <div class="row-lg-10">
             <% if user_signed_in? %>
-              <%= link_to user_path(@user) do %>
-              <button class="btn btn-success btn-sm btn-block">Sign up</button>
-              <% end %>
+            <%= link_to "Sign up", user_path(@user), class: "btn btn-success btn-sm btn-block" %>
             <% else %>
-              <%= link_to new_user_registration_path do %>
-              <button class="btn btn-success btn-sm btn-block">Sign up</button>
-              <% end %>
+            <%= link_to "Sign up", new_user_registration_path, class: "btn btn-success btn-sm btn-block" %>
             <% end %>
           </div>
         </div>
